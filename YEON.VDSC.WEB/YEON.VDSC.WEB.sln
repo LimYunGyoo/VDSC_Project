@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YEON.VDSC.WEB", "YEON.VDSC.WEB\YEON.VDSC.WEB.csproj", "{1BD14BD0-5E70-46CA-9BA9-98F6EF4C5D8B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YEON.VDSC.BOT", "YEON.VDSC.BOT\YEON.VDSC.BOT.csproj", "{AA2D3F51-DFF9-4929-9AA2-61C1FD2BF57F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YEON.VDSC.CORE", "YEON.VDSC.CORE\YEON.VDSC.CORE.csproj", "{711DB7DA-6CE1-4B90-B7E3-5CF1B26FC863}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BD14BD0-5E70-46CA-9BA9-98F6EF4C5D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BD14BD0-5E70-46CA-9BA9-98F6EF4C5D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BD14BD0-5E70-46CA-9BA9-98F6EF4C5D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BD14BD0-5E70-46CA-9BA9-98F6EF4C5D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA2D3F51-DFF9-4929-9AA2-61C1FD2BF57F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA2D3F51-DFF9-4929-9AA2-61C1FD2BF57F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA2D3F51-DFF9-4929-9AA2-61C1FD2BF57F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA2D3F51-DFF9-4929-9AA2-61C1FD2BF57F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{711DB7DA-6CE1-4B90-B7E3-5CF1B26FC863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{711DB7DA-6CE1-4B90-B7E3-5CF1B26FC863}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{711DB7DA-6CE1-4B90-B7E3-5CF1B26FC863}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{711DB7DA-6CE1-4B90-B7E3-5CF1B26FC863}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
