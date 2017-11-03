@@ -11,7 +11,7 @@ namespace YEON.VDSC.CORE.Domain
         public Object Id { get; set; }
         [BsonElement("discount")]
         public int Discount { get; set; }
-        [BsonElement("node")]
-        public string Node { get; set; }
+        [BsonElement("detail")]
+        public string Detail { get; set; }
     }
 }

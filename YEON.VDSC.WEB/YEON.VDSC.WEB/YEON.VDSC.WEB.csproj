@@ -6,20 +6,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="%2a%2a\**" />
     <Compile Remove="NewFolder\**" />
+    <Compile Remove="Views\node_modules\**" />
+    <Content Remove="%2a%2a\**" />
     <Content Remove="NewFolder\**" />
+    <Content Remove="Views\node_modules\**" />
+    <EmbeddedResource Remove="%2a%2a\**" />
     <EmbeddedResource Remove="NewFolder\**" />
+    <EmbeddedResource Remove="Views\node_modules\**" />
+    <None Remove="%2a%2a\**" />
     <None Remove="NewFolder\**" />
+    <None Remove="Views\node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\.gitignore" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="wwwroot\html\index.html" />
     <Content Include="wwwroot\index.html" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />

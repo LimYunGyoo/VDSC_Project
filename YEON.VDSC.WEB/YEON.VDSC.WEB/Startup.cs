@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using YEON.VDSC.CORE.Dao;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 
 namespace YEON.VDSC.WEB
 {
@@ -30,7 +31,10 @@ namespace YEON.VDSC.WEB
         {
             // Add framework services.
             services.AddMvc();
-            
+
+            // Setup cors
+            services.AddCors();
+
             // add dao
             services.AddSingleton<IElandmallDao, ElandmallDao>();
         }
@@ -41,7 +45,16 @@ namespace YEON.VDSC.WEB
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseCors(builder => 
+                builder.WithOrigins("http://localhost:8080")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowAnyOrigin()
+                .AllowCredentials()
+            );
+
             app.UseMvc();
+            
         }
     }
 }

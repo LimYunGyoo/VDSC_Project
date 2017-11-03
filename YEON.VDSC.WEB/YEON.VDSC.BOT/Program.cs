@@ -26,15 +26,19 @@ namespace YEON.VDSC.BOT
                                       + "&conr_stock_grp_no=1708001584&area_no=D1512000293&undefined=0&&_=1508809137180&page_idx=" + i
                                       , "//span[contains(@class,'p_per')]");
 
-                for (int j = 0; j < results.Count; j++)
+                if(results != null)
                 {
-                    int discount = Int32.Parse(results[j].InnerText.Replace("%", "").Trim());
-                    if (discount >= 50)
+                    for (int j = 0; j < results.Count; j++)
                     {
-                        Product product = new Product { Discount = discount, Node = results[j].ParentNode.ParentNode.ParentNode.OuterHtml };
-                        products.Add(product);
+                        int discount = Int32.Parse(results[j].InnerText.Replace("%", "").Trim());
+                        if (discount >= 50)
+                        {
+                            Product product = new Product { Id = Guid.NewGuid(), Discount = discount, Detail = results[j].ParentNode.ParentNode.ParentNode.InnerText };
+                            products.Add(product);
+                        }
                     }
                 }
+
             }
 
             elandmallDao.InsertProducts(products);
