@@ -15,20 +15,27 @@ namespace YEON.VDSC.WEB.Controllers
     public class SearchController : Controller
     {
         IElandmallDao ElandmallDao;
+        IGmarketDao GmarketDao;
 
-        public SearchController(IElandmallDao elandmallDao)
+        public SearchController(IElandmallDao elandmallDao, IGmarketDao gmarketDao)
         {
             ElandmallDao = elandmallDao;
+            GmarketDao = gmarketDao;
         }
 
         [HttpGet("elandmall")]
         public IActionResult GetElandmall(int discount = 50)
         {
-            var results = ElandmallDao.SelectAllProducts(discount);
+            var results = ElandmallDao.SelectOverProducts(discount);
             return Ok(results);
         }
 
-
+        [HttpGet("gmarket")]
+        public IActionResult GetGmarket(int discount = 50)
+        {
+            var results = GmarketDao.SelectOverProducts(discount);
+            return Ok(results);
+        }
     }
 }
     

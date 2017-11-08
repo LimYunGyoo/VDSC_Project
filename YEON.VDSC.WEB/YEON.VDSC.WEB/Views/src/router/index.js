@@ -5,6 +5,7 @@ import Frame from '@/components/layout/Frame'
 import NotFound from '@/components/common/NotFound'
 
 import Elandmall from '@/components/view/Elandmall'
+import Gmarket from '@/components/view/Gmarket'
 
 Vue.use(Router)
 
@@ -23,6 +24,10 @@ export default new Router({
             {
                 path: 'elandmall',
                 component: Elandmall
+            },
+            {
+                path: 'gmarket',
+                component: Gmarket
             }
         ]
     },

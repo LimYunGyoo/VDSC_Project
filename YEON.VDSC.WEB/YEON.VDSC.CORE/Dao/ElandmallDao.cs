@@ -10,7 +10,7 @@ namespace YEON.VDSC.CORE.Dao
     public interface IElandmallDao
     {
         void InsertProducts(IList<Product> products);
-        IList<Product> SelectAllProducts(int discount);
+        IList<Product> SelectOverProducts(int discount);
     }
 
     public class ElandmallDao : IElandmallDao
@@ -31,13 +31,13 @@ namespace YEON.VDSC.CORE.Dao
 
         public void InsertProducts(IList<Product> products)
         {
+            db.DropCollection(collectionsString);
             collection.InsertMany(products);
         }
 
-        public IList<Product> SelectAllProducts(int discount)
+        public IList<Product> SelectOverProducts(int discount)
         {            
             var filter = Builders<Product>.Filter.AnyGte("discount", discount);
-            
             IList<Product> results = collection.Find(filter).SortByDescending(x => x.Discount).ToList<Product>();
                
             return results;
