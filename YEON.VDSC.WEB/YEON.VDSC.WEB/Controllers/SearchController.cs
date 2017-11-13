@@ -16,11 +16,15 @@ namespace YEON.VDSC.WEB.Controllers
     {
         IElandmallDao ElandmallDao;
         IGmarketDao GmarketDao;
+        ITMonDao TMonDao;
+        IWemakepriceDao WemakepriceDao;
 
-        public SearchController(IElandmallDao elandmallDao, IGmarketDao gmarketDao)
+        public SearchController(IElandmallDao elandmallDao, IGmarketDao gmarketDao, ITMonDao tmonDao, IWemakepriceDao wemakepriceDao)
         {
             ElandmallDao = elandmallDao;
             GmarketDao = gmarketDao;
+            TMonDao = tmonDao;
+            WemakepriceDao = wemakepriceDao;
         }
 
         [HttpGet("elandmall")]
@@ -36,6 +40,21 @@ namespace YEON.VDSC.WEB.Controllers
             var results = GmarketDao.SelectOverProducts(discount);
             return Ok(results);
         }
+
+        [HttpGet("tmon")]
+        public IActionResult GetTMon(int discount = 50)
+        {
+            var results = TMonDao.SelectOverProducts(discount);
+            return Ok(results);
+        }
+
+        [HttpGet("wemakeprice")]
+        public IActionResult GetWemakeprice(int discount = 50)
+        {
+            var results = WemakepriceDao.SelectOverProducts(discount);
+            return Ok(results);
+        }
+        
     }
 }
     

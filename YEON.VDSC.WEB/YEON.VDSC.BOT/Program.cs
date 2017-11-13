@@ -18,12 +18,20 @@ namespace YEON.VDSC.BOT
         static void Main(string[] args)
         {
             // www.elandmall.com
-            //ElandmallService elandmallService = new ElandmallService();
-            //elandmallService.getDiscountProducts();
+            ElandmallService elandmallService = new ElandmallService();
+            elandmallService.getDiscountProducts();
 
             // www.gmarket.co.kr
             GmarketService gmarketService = new GmarketService();
             gmarketService.getDiscountProducts();
+
+            // www.ticketmonster.co.kr
+            TMonService tmonService = new TMonService();
+            tmonService.getDiscountProducts();
+
+            //www.wemakeprice.com
+            WemakepriceService wemakepriceService = new WemakepriceService();
+            wemakepriceService.getDiscountProducts();
 
         }
     }

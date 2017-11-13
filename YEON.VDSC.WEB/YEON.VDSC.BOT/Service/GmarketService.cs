@@ -26,7 +26,7 @@ namespace YEON.VDSC.BOT.Service
                 {
                     for (int j = 0; j < superDealResults.Count; j++)
                     {
-                        int discount = Int32.Parse(superDealResults[j].InnerText.Replace("% 할인", "").Trim());
+                        int discount = Int32.Parse(superDealResults[j].InnerText.Split('%')[0].Trim());
                         if (discount >= discountMinimum)
                         {
                             Product product = new Product { Id = Guid.NewGuid(), Discount = discount, Detail = superDealResults[j].ParentNode.ParentNode.ParentNode.InnerText };

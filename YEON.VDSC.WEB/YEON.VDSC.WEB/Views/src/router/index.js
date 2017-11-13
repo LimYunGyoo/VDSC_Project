@@ -6,6 +6,8 @@ import NotFound from '@/components/common/NotFound'
 
 import Elandmall from '@/components/view/Elandmall'
 import Gmarket from '@/components/view/Gmarket'
+import TMon from '@/components/view/TMon'
+import Wemakeprice from '@/components/view/Wemakeprice'
 
 Vue.use(Router)
 
@@ -28,6 +30,14 @@ export default new Router({
             {
                 path: 'gmarket',
                 component: Gmarket
+            },
+            {
+                path: 'tmon',
+                component: TMon
+            },
+            {
+                path: 'wemakeprice',
+                component: Wemakeprice
             }
         ]
     },
