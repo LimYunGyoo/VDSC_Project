@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Text;
 using System.IO;
 using YEON.VDSC.CORE.Dao;
+using YEON.VDSC.WEB.Services;
 
 namespace YEON.VDSC.WEB.Controllers
 {
@@ -14,44 +15,44 @@ namespace YEON.VDSC.WEB.Controllers
     [Route("api/search")]
     public class SearchController : Controller
     {
-        IElandmallDao ElandmallDao;
-        IGmarketDao GmarketDao;
-        ITMonDao TMonDao;
-        IWemakepriceDao WemakepriceDao;
+        IElandmallService elandmallService;
+        IGmarketService gmarketService;
+        ITMonService tmonService;
+        IWemakepriceService wemakepriceService;
 
-        public SearchController(IElandmallDao elandmallDao, IGmarketDao gmarketDao, ITMonDao tmonDao, IWemakepriceDao wemakepriceDao)
+        public SearchController(IElandmallService ElandmallService, IGmarketService GmarketService, ITMonService TMonService, IWemakepriceService WemakepriceService)
         {
-            ElandmallDao = elandmallDao;
-            GmarketDao = gmarketDao;
-            TMonDao = tmonDao;
-            WemakepriceDao = wemakepriceDao;
+            elandmallService = ElandmallService;
+            gmarketService = GmarketService;
+            tmonService = TMonService;
+            wemakepriceService = WemakepriceService;
         }
 
         [HttpGet("elandmall")]
         public IActionResult GetElandmall(int discount = 50)
         {
-            var results = ElandmallDao.SelectOverProducts(discount);
+            var results = elandmallService.SelectOverProducts(discount);
             return Ok(results);
         }
 
         [HttpGet("gmarket")]
         public IActionResult GetGmarket(int discount = 50)
         {
-            var results = GmarketDao.SelectOverProducts(discount);
+            var results = gmarketService.SelectOverProducts(discount);
             return Ok(results);
         }
 
         [HttpGet("tmon")]
         public IActionResult GetTMon(int discount = 50)
         {
-            var results = TMonDao.SelectOverProducts(discount);
+            var results = tmonService.SelectOverProducts(discount);
             return Ok(results);
         }
 
         [HttpGet("wemakeprice")]
         public IActionResult GetWemakeprice(int discount = 50)
         {
-            var results = WemakepriceDao.SelectOverProducts(discount);
+            var results = wemakepriceService.SelectOverProducts(discount);
             return Ok(results);
         }
         

@@ -7,16 +7,12 @@
 
   <ItemGroup>
     <Compile Remove="%2a%2a\**" />
-    <Compile Remove="NewFolder\**" />
     <Compile Remove="Views\node_modules\**" />
     <Content Remove="%2a%2a\**" />
-    <Content Remove="NewFolder\**" />
     <Content Remove="Views\node_modules\**" />
     <EmbeddedResource Remove="%2a%2a\**" />
-    <EmbeddedResource Remove="NewFolder\**" />
     <EmbeddedResource Remove="Views\node_modules\**" />
     <None Remove="%2a%2a\**" />
-    <None Remove="NewFolder\**" />
     <None Remove="Views\node_modules\**" />
   </ItemGroup>
 
@@ -30,6 +26,7 @@
     <Content Include="wwwroot\index.html" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.6.4" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
