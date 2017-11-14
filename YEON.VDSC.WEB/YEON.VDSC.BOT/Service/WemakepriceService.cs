@@ -19,9 +19,6 @@ namespace YEON.VDSC.BOT.Service
             {
                 IList<Product> products = new List<Product>();
 
-                //HtmlNodeCollection mainViewResults = ParseHTML(basicUrl
-                //                      , "//span[contains(@class,'discount')]");
-
                 HtmlNodeCollection mainViewResults = ParseHTML(basicUrl
                                       , "//span[contains(@class,'discount')]/span[contains(@class,'percent')]");
 
