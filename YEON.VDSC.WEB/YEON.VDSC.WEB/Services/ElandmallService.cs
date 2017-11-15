@@ -16,7 +16,7 @@ namespace YEON.VDSC.WEB.Services
 
     public class ElandmallService : BasicService, IElandmallService
     {
-        IElandmallDao elandmallDao = new ElandmallDao();
+        IElandmallDao elandmallDao;
 
         private const string basicUrl = "http://www.elandmall.com";
 

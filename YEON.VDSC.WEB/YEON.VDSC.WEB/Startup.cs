@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using YEON.VDSC.CORE.Dao;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using YEON.VDSC.WEB.Services;
+using YEON.VDSC.CORE.Config;
 
 namespace YEON.VDSC.WEB
 {
@@ -36,6 +37,8 @@ namespace YEON.VDSC.WEB
             // Setup cors
             services.AddCors();
 
+
+            /* Dependency Injection */
             // add service
             services.AddTransient<IElandmallService, ElandmallService>();
             services.AddTransient<IGmarketService, GmarketService>();
@@ -47,6 +50,10 @@ namespace YEON.VDSC.WEB
             services.AddSingleton<IGmarketDao, GmarketDao>();
             services.AddSingleton<ITMonDao, TMonDao>();
             services.AddSingleton<IWemakepriceDao, WemakepriceDao>();
+
+            /* Configuration */
+            // add basic configuration
+            services.Configure<Connection>(Configuration.GetSection("Connection"));
             
         }
 

@@ -1,4 +1,5 @@
 ﻿using HtmlAgilityPack;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace YEON.VDSC.WEB.Services
 
     public class TMonService : BasicService, ITMonService
     {
-        ITMonDao tmonDao = new TMonDao();
+        ITMonDao tmonDao;
 
         private const string basicUrl = "http://www.ticketmonster.co.kr";
         public TMonService(ITMonDao TMonDao)

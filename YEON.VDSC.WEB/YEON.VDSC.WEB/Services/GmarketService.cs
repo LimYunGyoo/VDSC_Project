@@ -16,7 +16,7 @@ namespace YEON.VDSC.WEB.Services
 
     public class GmarketService : BasicService, IGmarketService
     {
-        IGmarketDao gmarketDao = new GmarketDao();
+        IGmarketDao gmarketDao;
 
         private const string basicUrl = "http://corners.gmarket.co.kr";
 

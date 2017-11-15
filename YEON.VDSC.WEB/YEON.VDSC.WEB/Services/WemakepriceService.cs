@@ -16,7 +16,7 @@ namespace YEON.VDSC.WEB.Services
 
     public class WemakepriceService : BasicService, IWemakepriceService
     {
-        IWemakepriceDao wemakepriceDao = new WemakepriceDao();
+        IWemakepriceDao wemakepriceDao;
 
         private const string basicUrl = "http://www.wemakeprice.com";
 

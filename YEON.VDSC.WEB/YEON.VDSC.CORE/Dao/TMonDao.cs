@@ -1,7 +1,9 @@
-﻿using MongoDB.Driver;
+﻿using Microsoft.Extensions.Options;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using YEON.VDSC.CORE.Config;
 using YEON.VDSC.CORE.Domain;
 
 namespace YEON.VDSC.CORE.Dao
@@ -17,14 +19,12 @@ namespace YEON.VDSC.CORE.Dao
         MongoClient cli;
         IMongoDatabase db;
         IMongoCollection<Product> collection;
-        private static readonly string connString = "mongodb://localhost";
-        private static readonly string databaseString = "VDSCDB";
         private static readonly string collectionsString = "tmon";
 
-        public TMonDao()
+        public TMonDao(IOptions<Connection> connectionSetting)
         {
-            cli = new MongoClient(connString);
-            db = cli.GetDatabase(databaseString);
+            cli = new MongoClient(connectionSetting.Value.ConnectionString);
+            db = cli.GetDatabase(connectionSetting.Value.DBName);
             collection = db.GetCollection<Product>(collectionsString);
         }
 
