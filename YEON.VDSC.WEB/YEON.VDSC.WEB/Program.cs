@@ -18,6 +18,7 @@ namespace YEON.VDSC.WEB
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .UseApplicationInsights()
+                .UseUrls("http://localhost:3222")
                 .Build();
 
             host.Run();
