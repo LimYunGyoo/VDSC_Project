@@ -1,6 +1,6 @@
 ﻿<template>
   <div class="wrapper">
-    <img src="../../assets/logo.png">
+    <img src="../../assets/images/logo.png">
     <top-nav></top-nav>
     <center-content></center-content>
   </div>

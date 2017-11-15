@@ -7,23 +7,26 @@
 
   <ItemGroup>
     <Compile Remove="%2a%2a\**" />
+    <Compile Remove="Views\dist\**" />
     <Compile Remove="Views\node_modules\**" />
+    <Compile Remove="wwwroot\html\**" />
     <Content Remove="%2a%2a\**" />
+    <Content Remove="Views\dist\**" />
     <Content Remove="Views\node_modules\**" />
+    <Content Remove="wwwroot\html\**" />
     <EmbeddedResource Remove="%2a%2a\**" />
+    <EmbeddedResource Remove="Views\dist\**" />
     <EmbeddedResource Remove="Views\node_modules\**" />
+    <EmbeddedResource Remove="wwwroot\html\**" />
     <None Remove="%2a%2a\**" />
+    <None Remove="Views\dist\**" />
     <None Remove="Views\node_modules\**" />
+    <None Remove="wwwroot\html\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Views\.gitignore" />
     <None Remove="Views\npm-debug.log.3310367505" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="wwwroot\html\index.html" />
-    <Content Include="wwwroot\index.html" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" Version="1.6.4" />
@@ -43,6 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YEON.VDSC.CORE\YEON.VDSC.CORE.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>

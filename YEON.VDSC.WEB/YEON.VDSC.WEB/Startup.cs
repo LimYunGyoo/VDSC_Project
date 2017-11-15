@@ -54,7 +54,7 @@ namespace YEON.VDSC.WEB
             /* Configuration */
             // add basic configuration
             services.Configure<Connection>(Configuration.GetSection("Connection"));
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,16 +63,15 @@ namespace YEON.VDSC.WEB
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseCors(builder => 
-                builder.WithOrigins("http://localhost:8080")
-                .AllowAnyHeader()
-                .AllowAnyMethod()
-                .AllowAnyOrigin()
-                .AllowCredentials()
+            app.UseCors(builder =>
+                builder.AllowAnyHeader()
+                       .AllowAnyMethod()
+                       .AllowAnyOrigin()
+                       .AllowCredentials()
             );
 
             app.UseMvc();
-            
+
         }
     }
 }

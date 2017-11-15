@@ -25,8 +25,7 @@
     data() {
       return {
         products: null,
-        selected: null,
-        getUrl: null
+        selected: null
       }
     },
     methods: {
